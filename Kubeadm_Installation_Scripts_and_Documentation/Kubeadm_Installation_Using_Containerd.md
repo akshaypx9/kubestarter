@@ -71,16 +71,17 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 5. **Install Kubernetes Components**:
     ```bash
     sudo apt-get update
-    sudo apt-get install -y apt-transport-https ca-certificates curl gpg
-    sudo apt install docker.io
-    sudo usermod -aG docker ubuntu
+    sudo apt-get install -y apt-transport-https ca-certificates curl 
+    sudo apt install docker.io -y
 
-    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    sudo systemctl enable --now docker
 
-    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    curl -fsSL "https://packages.cloud.google.com/apt/doc/apt-key.gpg" | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kubernetes.list
+
+    echo 'deb https://packages.cloud.google.com/apt kubernetes-xenial main' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
     sudo apt-get update
-    sudo apt-get install -y kubelet kubeadm kubectl
+    sudo apt-get install kubelet=1.20.0-00  kubeadm=1.20.0-00 kubectl=1.20.0-00 -y
     sudo apt-mark hold kubelet kubeadm kubectl
     ```
 
