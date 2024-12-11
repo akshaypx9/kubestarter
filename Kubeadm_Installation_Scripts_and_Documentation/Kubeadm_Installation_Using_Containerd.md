@@ -98,10 +98,10 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
     sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
     ```
 
-3. **Install a Network Plugin (Calico)**:
+3. **Install a Network Plugin (weave)**:
     ```bash
-    kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
-    ```
+    kubectl apply -f kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+    '''
 
 4. **Generate Join Command**:
     ```bash
