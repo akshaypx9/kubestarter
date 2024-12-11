@@ -79,7 +79,7 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
     curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
     echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
     sudo apt-get update
-    sudo apt-get install kubelet=1.20.0-00  kubeadm=1.20.0-00 kubectl=1.20.0-00 -y
+    sudo apt-get install kubelet kubeadm kubectl -y
     sudo apt-mark hold kubelet kubeadm kubectl
     ```
 
