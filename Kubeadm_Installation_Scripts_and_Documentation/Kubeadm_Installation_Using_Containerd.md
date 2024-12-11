@@ -100,8 +100,8 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 
 3. **Install a Network Plugin (weave)**:
     ```bash
-    kubectl apply -f kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
-    '''
+    kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+     ```
 
 4. **Generate Join Command**:
     ```bash
